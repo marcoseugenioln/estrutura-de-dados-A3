@@ -15,31 +15,24 @@ public class Pilha {
     private void setSize(int size) {
         this.size = size;
     }
-    
-    private void disable(){
-        this.enabled = false;
-    }
 
     public void add(int data){
         if(this.enabled){
             lista[this.emptyPosition] = data;
             this.emptyPosition = this.emptyPosition + 1;
             if(this.emptyPosition == size - 1){
-                System.out.println("Pile is full!");
+                System.out.println("Pile is full!\n");
             }
         }
         else{
-            System.out.println("Pile if full!");
+            System.out.println("Pile if full!\n");
         }
     }
 
-    public int remove(int index){
-        int removed = 0;
-        if(this.emptyPosition > this.size - 1){
-            removed = this.lista[this.emptyPosition - 1];
-            this.lista[this.emptyPosition - 1] = 0;
-            this.emptyPosition = this.emptyPosition - 1;
-        }
+    public int remove(){
+        int removed = this.lista[this.emptyPosition - 1];
+        this.lista[this.emptyPosition - 1] = 0;
+        this.emptyPosition = this.emptyPosition - 1;
         return removed;
     }
 
@@ -78,7 +71,7 @@ public class Pilha {
     }
 
     public void read(){
-        System.out.print("{ ");
+        System.out.print("Pilha = { ");
         for (int i = 0; i < size; i++){
             if (i == size - 1){
                 System.out.print(this.lista[i] + " }");

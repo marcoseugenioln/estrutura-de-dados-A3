@@ -13,26 +13,22 @@ public class Fila {
     private int size;
     private int emptyPosition = 0;
     private int lista [];
-    private boolean enabled = true;
 
     private void setSize(int size) {
         this.size = size;
     }
     
-    private void disable(){
-        this.enabled = false;
-    }
 
     public void add(int data){
         if(this.emptyPosition < this.size){
             lista[this.emptyPosition] = data;
             this.emptyPosition = this.emptyPosition + 1;
             if(this.emptyPosition == size - 1){
-                System.out.println("Queue is full!");
+                System.out.println("Queue is full!\n");
             }
         }
         else{
-            System.out.println("Queue if full!");
+            System.out.println("Queue if full!\n");
         }
     }
 
@@ -81,7 +77,7 @@ public class Fila {
     }
 
     public void read(){
-        System.out.print("{ ");
+        System.out.print("Fila = { ");
         for (int i = 0; i < size; i++){
             if (i == size - 1){
                 System.out.print(this.lista[i] + " }");
